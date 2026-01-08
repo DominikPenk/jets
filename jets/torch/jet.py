@@ -17,7 +17,7 @@ class TorchJet(JetBase):
     def _log(cls, x):
         return torch.log(x) if isinstance(x, torch.Tensor) else math.log(x)
 
-    def createas(self, value, grad) -> Self:
+    def create_similar(self, value, grad) -> Self:
         return self.__class__(value, grad, dtype=self.dtype, device=self.device)
 
     @classmethod

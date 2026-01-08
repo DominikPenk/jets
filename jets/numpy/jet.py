@@ -18,7 +18,7 @@ class NumpyJet(JetBase):
     def _log(cls, x: np.ndarray) -> np.ndarray:
         return np.log(x)
 
-    def createas(self, value: Numeric, grad: Numeric) -> Self:
+    def create_similar(self, value: Numeric, grad: Numeric) -> Self:
         return self.__class__(value, grad, dtype=self.dtype)
 
     def __array_ufunc__(self, func, method, *args, **kwargs):

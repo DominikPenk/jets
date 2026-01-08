@@ -12,9 +12,9 @@ class TestNumpyJet(JetContract):
         return NumpyJet
 
     @pytest.mark.parametrize("dtype", (None, np.int32, np.float64))
-    def test_createas(self, jet: type[NumpyJet], dtype):
+    def test_create_similar(self, jet: type[NumpyJet], dtype):
         x = jet(2.0, 1.0, dtype=dtype)
-        y = x.createas(5.0, 3.0)
+        y = x.create_similar(5.0, 3.0)
 
         self.assert_jet(y, 5.0, 3.0)
         assert x.dtype == y.dtype

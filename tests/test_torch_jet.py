@@ -13,9 +13,9 @@ class TestTorchJet(JetContract):
         return TorchJet
 
     @pytest.mark.parametrize("dtype", (None, torch.int32, torch.float64))
-    def test_createas(self, jet: type[TorchJet], dtype):
+    def test_create_similar(self, jet: type[TorchJet], dtype):
         x = jet(2.0, 1.0, dtype=dtype)
-        y = x.createas(5.0, 3.0)
+        y = x.create_similar(5.0, 3.0)
 
         self.assert_jet(y, 5.0, 3.0)
         assert x.dtype == y.dtype

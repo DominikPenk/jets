@@ -213,7 +213,7 @@ class JetContract:
         x = jet([1.0, 2.0, 3.0], [1.0, 1.0, 1.0])
         self.assert_jet(x, [1.0, 2.0, 3.0], [1.0, 1.0, 1.0])
 
-    def test_createas(self, jet):
+    def test_create_similar(self, jet):
         x = jet(2.0, 1.0)
         y = x.createas(5.0, 3.0)
 

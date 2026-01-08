@@ -22,25 +22,25 @@ def implements(numpy_function):
 def exp(x: NumpyJet) -> NumpyJet:
     value = np.exp(x.value)
     grad = value * x.grad
-    return x.createas(value, grad)
+    return x.create_similar(value, grad)
 
 
 @implements(np.sin)
 def sin(x: NumpyJet) -> NumpyJet:
     value = np.sin(x.value)
     grad = np.cos(x.value) * x.grad
-    return x.createas(value, grad)
+    return x.create_similar(value, grad)
 
 
 @implements(np.cos)
 def cos(x: NumpyJet) -> NumpyJet:
     value = np.cos(x.value)
     grad = -np.sin(x.value) * x.grad
-    return x.createas(value, grad)
+    return x.create_similar(value, grad)
 
 
 @implements(np.log)
 def log(x: NumpyJet) -> NumpyJet:
     value = np.log(x.value)
     grad = x.grad / x.value
-    return x.createas(value, grad)
+    return x.create_similar(value, grad)
