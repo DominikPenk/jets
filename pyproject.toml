@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jets"
+version = "0.0.1"
+description = "A forward-mode automatic differentiation library based on Jets."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Dominik Penk", email = "penk.dominik@gmail.com" }
+]
+keywords = [
+    "automatic-differentiation",
+    "forward-mode",
+    "dual-numbers",
+    "jets",
+    "numerical-differentiation",
+    "scientific-computing",
+]
+classifiers = [
+     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.3.4"]
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs~=1.6",
+    "mkdocs-material~=9.6",
+    "mkdocstrings~=0.3",
+]
+
+# Optional group that installs everything needed to run the test-suite
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+torch = [
+    "torch>=2.9",
+]
+
+all = [
+    "mkdocs~=1.6",
+    "mkdocs-material~=9.6",
+    "mkdocstrings~=0.3",
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
